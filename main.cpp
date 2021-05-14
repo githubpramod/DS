@@ -1,3 +1,4 @@
+#include"list.h"
 #include "sort.h"
 #include "graph.h"
 #include"hashTable.h"
@@ -10,14 +11,9 @@ using namespace std;
 
 int main() {
 
-  int Array[10] = {3,5,8,8,4,12,45,76,90,45};
-  int size = sizeof(Array) / sizeof(Array[0]);
-  countSort iS(Array,10);
-  iS.display();
-  iS.sortArray();
-  cout << "Sorted array in ascending order:\n";
-  iS.display();
-
+i
+	cout<<endl;
+	
   return 0;
 }
 
@@ -37,6 +33,47 @@ int main() {
 
 
 /*
+nt c=0,del = 0;
+	linkedList ll;
+    Node* head = NULL;
+    head = new Node{};
+    cout<<"After Sorted: "<<ll.isSorted(head)<<endl;
+    ll.Display(head);
+    
+    head->data=23;
+    ll.Create(head,134);
+    ll.Create(head,1076);
+    ll.Create(head,103);
+    ll.Create(head,134);
+    ll.Create(head,107);
+    ll.Create(head,103);
+    c = ll.CountNode(head);
+    cout<<"Nodes: "<<c<<endl;
+    cout<<"Create: "<<endl;
+    ll.Display(head);
+    ll.pushAtIndex(head,4,223);
+    cout<<"\nAfter Pushing: "<<endl;
+    ll.Display(head);
+    ll.Create(head,553);
+    ll.Create(head,763);
+    cout<<"\nCreate: "<<endl;
+    ll.Display(head);
+    ll.pushAtIndex(head,0,999);
+    cout<<"\nAfter Pushing: "<<endl;
+    ll.Display(head);
+    c = ll.CountNode(head);
+    cout<<"\nNodes: "<<c<<endl;
+    
+    del = ll.Delete(head,3);
+    cout<<"\nDeleted node: "<<del<<endl;
+    ll.Display(head);
+    
+    c = ll.CountNode(head);
+    cout<<"\nNodes: "<<c<<endl;
+    
+    //isSorted(head);
+    cout<<"\nAfter Sorted: "<<ll.isSorted(head)<<endl;
+    ll.Display(head);
   int Array[10] = {3,5,8,8,4,12,45,76,90,45};
   int size = sizeof(Array) / sizeof(Array[0]);
   insertionSort iS(Array,10);
