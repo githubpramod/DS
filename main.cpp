@@ -1,8 +1,10 @@
-#include"list.h"
-#include "sort.h"
+//#include"queue.h"
+//#include"stack.h"
+//#include"list.h"
+//#include "sort.h"
 #include "graph.h"
-#include"hashTable.h"
-#include "tree.h"
+//#include"hashTable.h"
+//#include "tree.h"
 #include <iostream>
 
 
@@ -11,9 +13,9 @@ using namespace std;
 
 int main() {
 
-i
-	cout<<endl;
 	
+  cout<<endl;
+  
   return 0;
 }
 
@@ -33,6 +35,26 @@ i
 
 
 /*
+	int HT[10]={0};
+	hashTable ht(10);
+	ht.Insert(HT,12);
+	ht.Insert(HT,25);
+	ht.Insert(HT,365);
+	ht.Insert(HT,35);
+	ht.Insert(HT,26);
+	
+	cout<<"Key found at:"<<ht.Search(HT,35)<<endl;
+    Queue qq;
+    qq.enqueue(10);
+	cout<<"First"<<endl;
+    qq.enqueue(20);
+    qq.Display();   
+    qq.enqueue(150);
+    qq.enqueue(204);
+    qq.Display(); 
+	cout<<"Deque"<<qq.dequeue()<<endl;
+    qq.Display(); 
+	cout<<endl;
 nt c=0,del = 0;
 	linkedList ll;
     Node* head = NULL;

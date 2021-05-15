@@ -13,7 +13,7 @@ void tree::preorderTraversal(Node* node){
 		return;
 	cout << node->data << "->";
 	preorderTraversal(node->left);
-  preorderTraversal(node->right);
+	preorderTraversal(node->right);
 }
 void tree::postorderTraversal(Node* node){
 	if (node == nullptr)

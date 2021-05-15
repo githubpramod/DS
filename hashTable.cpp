@@ -1,40 +1,31 @@
 #include"hashTable.h"
 
-HashTable::HashTable(int c)
-{
-  int size = getPrime(c);
-  this->capacity = size;
-  table = new list<int>[capacity];
+hashTable::hashTable(int s):size{s}{
+	
 }
-void HashTable::insertItem(int key, int data)
-{
-  int index = hashFunction(key);
-  table[index].push_back(data);
+hashTable::~hashTable(){
+	
 }
-
-void HashTable::deleteItem(int key)
-{
-  int index = hashFunction(key);
-
-  list<int>::iterator i;
-  for (i = table[index].begin();
-   i != table[index].end(); i++)
-  {
-  if (*i == key)
-    break;
-  }
-
-  if (i != table[index].end())
-  table[index].erase(i);
+int hashTable::hash(int key){
+	return key%this->size;
 }
-
-void HashTable::displayHash()
-{
-  for (int i = 0; i < capacity; i++)
-  {
-  cout << "table[" << i << "]";
-  for (auto x : table[i])
-    cout << " --> " << x;
-  cout << endl;
-  }
+int hashTable::probe(int H[], int key){
+	int index = hash(key);
+	int i=0;
+	while(H[(index+i)%this->size]!=0)
+		i++;
+	return (index+i)%this->size;
+}
+void hashTable::Insert(int H[], int key){
+	int index = hash(key);
+	if(H[index]!=0)
+		index=probe(H,key);
+	H[index]=key;
+}
+int hashTable::Search(int H[], int key){
+	int index = hash(key);
+	int i=0;
+	while(H[(index+i)%this->size]!=key)
+		i++;
+	return (index+i)%this->size;
 }
