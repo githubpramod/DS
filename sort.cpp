@@ -212,3 +212,117 @@ void countSort::display(){
 				}
 				cout<<endl;
 }
+/*****************************************************************************/
+binSort::binSort(int A[], int len):maxLen(len){
+				pAdata = new int[maxLen];
+				for(int i=0; i<maxLen; ++i){
+					pAdata[i] = A[i];	
+				}
+}
+binSort::~binSort(){
+					delete[] pAdata;
+}
+
+int binSort::getBucketIndex(int index){
+				return index/capacity;
+}
+void binSort::printBuckets(Node* node){
+	Node* cur = node;
+	cout<<setw(3)<<cur->data;
+	cur=cur->next;
+}
+Node* binSort::insertionSort(Node* list){
+	Node *k, *nodeList;
+	if(list == 0 || list->next == 0){
+		return list;
+	}
+	
+	nodeList =list;
+	k = list->next;
+	nodeList->next=0;
+	while(k!=0){
+		Node *ptr;
+		if(nodeList->data > k->data){
+			Node* temp;
+			temp = k;
+			k = k->next;
+			temp->next = nodeList;
+			nodeList = temp;
+			continue;
+		}
+		for(ptr = nodeList;ptr->next!=0; ptr=ptr->next){
+			if(ptr->next->data > k->data)
+				break;
+		}
+		if(ptr->next!=0){
+			Node* temp;
+			temp = k;
+			k = k->next;
+			temp->next = ptr->next;
+			ptr->next = temp;
+			continue;
+		}else{
+			ptr->next = k;
+			k = k->next;
+			ptr->next->next = 0;
+			continue;
+		}
+	}
+	return nodeList;
+}
+void binSort::sortArray(){
+				int i,j,pos;
+				Node** buckets = new Node*[nofBucket];
+				for(i=0; i<nofBucket;++i){
+					buckets[i] = NULL;
+				}
+				
+				for(i=0; i<maxLen; ++i){
+					Node *current = new Node;
+					pos = getBucketIndex(pAdata[i]);
+					current->data = pAdata[i];
+					current->next = buckets[pos];
+					buckets[pos] = current;
+				}
+				
+				for(i=0;i<nofBucket;++i){
+				cout<<"Bucket["<<i<<"]:";
+				printBuckets(buckets[i]);
+				cout<<endl;
+				}
+				
+				for(i=0;i<nofBucket;++i){
+					buckets[i]=insertionSort(buckets[i]);
+				}
+				cout<<endl;
+				for(i=0;i<nofBucket;++i){
+					cout<<"Bucket["<<i<<"]:";
+					printBuckets(buckets[i]);
+					cout<<endl;
+				}
+				
+				for(j=i=0;i<nofBucket;++i){
+					Node* node;
+					node = buckets[i];
+					while(node){
+						pAdata[j++] = node->data;
+						node = node->next;
+					}
+				}
+				
+				for(i=0;i<nofBucket;++i){
+					Node* node;
+					node = buckets[i];
+					while(node){
+						Node* temp;
+						temp = node;
+						node = node->next;
+						delete temp;
+					}
+				}
+			delete buckets;
+			return;
+}
+void binSort::display(){
+	
+}

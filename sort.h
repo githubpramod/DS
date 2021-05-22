@@ -2,6 +2,7 @@
 #define __SORT_DEF
 
 #include <iostream>
+#include <iomanip>
 
 using namespace std;
 
@@ -82,3 +83,26 @@ class countSort{
 };
 
 #endif
+
+class Node{
+	public:
+			int data;
+			Node* next;
+};
+class binSort{ //also called bucket sort
+	private:
+			int nofBucket =6;
+			int capacity = 10;
+			int *pAdata = nullptr;
+			Node* node;
+			//Node** buckes;
+			int maxLen=0;
+	public:
+			binSort(int A[], int len);
+			~binSort();
+			void sortArray();
+			void display();
+			int getBucketIndex(int index);
+			void printBuckets(Node* node);
+			Node* insertionSort(Node* list);
+};

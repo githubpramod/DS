@@ -1,3 +1,4 @@
+#
 TARGET=algorithm
 OBJS=sort.o hashTable.o graph.o tree.o list.o stack.o queue.o main.o
 $(TARGET):$(OBJS)

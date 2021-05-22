@@ -26,5 +26,23 @@ class tree{
 			void inorderTraversal(Node* node);
 };
 
+// full binary  tree have at most two children
+//every parent node/internal node has either two or no children
 
+//Balanced Binary Tree It is a type of binary tree in which the 
+//difference between the height of the left and the right subtree for each node is either 0 or 1.
+
+
+class fullBinTree{
+	private:
+			Node* node; 
+	public:
+			fullBinTree();
+			~fullBinTree();
+			bool isFullBinaryTree(Node* node);
+			void preorderTraversal(Node* node);
+			void postorderTraversal(Node* node);
+			void inorderTraversal(Node* node);
+
+};
 #endif

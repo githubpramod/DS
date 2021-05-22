@@ -2,9 +2,9 @@
 //#include"stack.h"
 //#include"list.h"
 //#include "sort.h"
-#include "graph.h"
+//#include "graph.h"
 //#include"hashTable.h"
-//#include "tree.h"
+#include "tree.h"
 #include <iostream>
 
 
@@ -13,7 +13,27 @@ using namespace std;
 
 int main() {
 
-	
+  fullBinTree ftr;
+  Node* root = new Node(1);
+  root->left = new Node(2);
+  root->right = new Node(9);
+  root->left->left = new Node(5);
+  root->left->right = new Node(6);
+  root->right->right = new Node(4);
+
+  if (ftr.isFullBinaryTree(root))
+    cout << "The tree is a full binary tree\n";
+  else
+    cout << "The tree is not a full binary tree\n";
+    cout << "Inorder traversal ";
+  ftr.inorderTraversal(root);
+
+  cout << "\nPreorder traversal ";
+  ftr.preorderTraversal(root);
+
+  cout << "\nPostorder traversal ";
+  ftr.postorderTraversal(root);
+  
   cout<<endl;
   
   return 0;
@@ -35,6 +55,13 @@ int main() {
 
 
 /*
+  int Array[10] = {3,5,8,8,4,12,45,76,90,45};
+  int size = sizeof(Array) / sizeof(Array[0]);
+  binSort bs(Array,size);
+  bs.display();
+  bs.sortArray();
+  bs.display();
+	
 	int HT[10]={0};
 	hashTable ht(10);
 	ht.Insert(HT,12);
