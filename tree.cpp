@@ -107,3 +107,92 @@ void fullBinTree::inorderTraversal(Node* node){
 	cout << node->data << "->";
 	inorderTraversal(node->right);
 }
+
+/* 
+Binary search tree
+                              30
+					15              50
+				10     20   40       60
+				dont have duplicate, means no duplicate
+drawbach: height can be vary for same number of value if change the order to insert the value;
+
+ */
+ 
+ binarySearchTree::binarySearchTree(){
+	 
+ }
+binarySearchTree::~binarySearchTree(){
+	
+}
+bstNode* binarySearchTree::insert(bstNode *node, int val){
+	if(node == nullptr){
+		bstNode *temp = new bstNode{};
+		temp->data = val;
+		temp->left = temp->right = nullptr;
+		return temp;
+	}
+	if(val < node->data){
+		node->left = insert(node->left, val);
+	}else{
+		node->right = insert(node->right, val);
+	}
+	
+	return node;
+}
+
+bstNode* binarySearchTree::NodeValue(bstNode *node){
+	bstNode *curr = node;
+	while(curr && curr->left != nullptr)
+		curr = curr->left;
+	
+	return curr;
+}
+bstNode* binarySearchTree::deleteNode(bstNode *root, int val){
+	if(root == nullptr)
+		return root;
+	
+	if(val < root->data){
+		root->left = deleteNode(root->left, val);
+	}else if(val > root->data){
+		root->right = deleteNode(root->right, val);
+	}else{
+		if(root->left == nullptr){
+			bstNode *temp = root->right;
+			delete root;
+			return temp;
+		}else if (root->right == nullptr){
+			bstNode *temp = root->left;
+			delete root;
+			return temp;
+		}
+		
+		bstNode *temp = NodeValue(root->right);
+		root->data = temp->data;
+		root->right = deleteNode(root->right, temp->data);
+	}
+	return root;
+}
+void binarySearchTree::inorderTraversal(bstNode* node){
+	if (node == nullptr)
+		return;
+
+	inorderTraversal(node->left);
+	cout << node->data << "->";
+	inorderTraversal(node->right);
+}
+ 
+ 
+ /* 
+AVL
+AVL control  the height so called height balened binary tree
+balance factor = height of left subtree - height of right subtree
+bf = hl - hr={-1,0,1}
+bf = <=1 then balanced
+bf =>1 imbalanced
+ */
+
+ /*
+2 3 trees 
+ */
+ 
+ 

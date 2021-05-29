@@ -1,0 +1,41 @@
+What really thrilled your software developer mind lately? Tell us what you love or hate
+and why!
+A:
+Software development is a craft, it gives huge pride after succesufully comleted work where have contributed 
+somthing in designing, codeing writing and debugging. Debugging is very intresting for me because it gives challange 
+to analyses the error and fix it and offcourse provides more learning and great feeling once issue is get resolved.
+Developing software is all about the problem solving. In software development, code writing is a one part and maximum 
+work is about to solve the real complex problems where need to have skills to identify the prblem and this gives more learning while solving the problem.
+A high propotion of meetings makes me unfortable because it obstectle in the flow of work. If have more meeting then more obstectles in the regular work 
+that lead to delay the work or distract the focus from the work and I really hate if debugging some issue and in between have meeting.
+
+Software development inspire me to learn the new technologies which are evolve around my work and that inspriation lead to me learn and write the code about that.
+So that is the reason regulary practice to write the new code and try to optimize the code in efficient way and also upload on the gitgub https://github.com/githubpramod.
+
+Good software always have good design which decompose the software into the small components which can write simple and efficent.
+This simple and efficent code writing required to have design ducuments where any software developer can write the simple and efficent code.
+Code should have also tracebility so that if any implementaytion is not possible in real scenerios then it could be updated in the software design 
+document and that canb be updated to back until system requiremtns. Intresting workflow is system requient to system architecure and then toward 
+software requirment then software architere and finally software detaled design.
+
+
+Have you recently fixed a super obscure bug or started learning a new language?
+Recently came up with very intersting error it gave me lots of learning as well. The issue was about the exception error, one peace of code have two local variable and 
+one was using as a denomenator and another as a neumenarator and these variable were updating from the funtion parameters. while debuging found the both the local 
+variables are updating correctly whenever we see in the TRACE32 debugger found the updated values as per expectation but any how system was througinh exception error.
+This problem irritated and consumed lots of time to figuring out the issue. Then finally got some idea after so much debugging that chech the data odf variables at memory 
+level and strated debugging and checked the memory address where these two variavle were loaded and finaly found that data of these two variables are getting exchanges 
+but not displaying correctly in debugger variable window.
+
+These types of issue we face on regular basis and personally enjoy to solving it.
+
+
+
+
+Have you discovered something interesting or do you want to tell a story about a
+specific piece of beautiful or super messy code?
+
+
+
+
+

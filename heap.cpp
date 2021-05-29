@@ -1,0 +1,6 @@
+/* 
+heap is complete binary tree
+max heap
+min heap
+
+ */

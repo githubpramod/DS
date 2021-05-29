@@ -6,6 +6,11 @@
 
 using namespace std;
 
+class bstNode {
+	public:
+			int data;
+			bstNode *left, *right;
+};
 class Node {
 	public:
 			int data;
@@ -45,4 +50,23 @@ class fullBinTree{
 			void inorderTraversal(Node* node);
 
 };
+
+/* 
+
+Binary Search Tree 
+*/
+class binarySearchTree{
+	private:
+			bstNode* node; 
+	public:
+			binarySearchTree();
+			~binarySearchTree();
+			bstNode* insert(bstNode *node, int val);
+			bstNode* NodeValue(bstNode *node);
+			bstNode* deleteNode(bstNode *root, int val);
+			void inorderTraversal(bstNode* node);
+
+};
+
+
 #endif

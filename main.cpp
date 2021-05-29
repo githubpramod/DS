@@ -13,26 +13,24 @@ using namespace std;
 
 int main() {
 
-  fullBinTree ftr;
-  Node* root = new Node(1);
-  root->left = new Node(2);
-  root->right = new Node(9);
-  root->left->left = new Node(5);
-  root->left->right = new Node(6);
-  root->right->right = new Node(4);
+binarySearchTree bst;
+bstNode *root = NULL;
+  root = bst.insert(root, 1);
+  root = bst.insert(root, 2);
+  root = bst.insert(root, 4);
+  root = bst.insert(root, 6);
+  root = bst.insert(root, 7);
+  root = bst.insert(root, 150);
+  root = bst.insert(root, 44);
+  root = bst.insert(root, 89);
 
-  if (ftr.isFullBinaryTree(root))
-    cout << "The tree is a full binary tree\n";
-  else
-    cout << "The tree is not a full binary tree\n";
-    cout << "Inorder traversal ";
-  ftr.inorderTraversal(root);
+  cout << "inorderTraversal traversal: ";
+  bst.inorderTraversal(root);
 
-  cout << "\nPreorder traversal ";
-  ftr.preorderTraversal(root);
+  root = bst.deleteNode(root, 150);
+  cout << "inorderTraversal traversal: ";
+  bst.inorderTraversal(root);
 
-  cout << "\nPostorder traversal ";
-  ftr.postorderTraversal(root);
   
   cout<<endl;
   
@@ -55,6 +53,27 @@ int main() {
 
 
 /*
+
+fullBinTree ftr;
+  Node* root = new Node(1);
+  root->left = new Node(2);
+  root->right = new Node(9);
+  root->left->left = new Node(5);
+  root->left->right = new Node(6);
+  root->right->right = new Node(4);
+
+  if (ftr.isFullBinaryTree(root))
+    cout << "The tree is a full binary tree\n";
+  else
+    cout << "The tree is not a full binary tree\n";
+    cout << "Inorder traversal ";
+  ftr.inorderTraversal(root);
+
+  cout << "\nPreorder traversal ";
+  ftr.preorderTraversal(root);
+
+  cout << "\nPostorder traversal ";
+  ftr.postorderTraversal(root);
   int Array[10] = {3,5,8,8,4,12,45,76,90,45};
   int size = sizeof(Array) / sizeof(Array[0]);
   binSort bs(Array,size);
